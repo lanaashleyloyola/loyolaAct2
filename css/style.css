@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+body,
+button {
+  font-family: "Inter", sans-serif;
+}
+:root {
+  --offcanvas-width: 270px;
+  --topNavbarHeight: 56px;
+}
+.sidebar-nav {
+  width: var(--offcanvas-width);
+}
+.sidebar-link {
+  display: flex;
+  align-items: center;
+}
+.sidebar-link .right-icon {
+  display: inline-flex;
+}
+.sidebar-link[aria-expanded="true"] .right-icon {
+  transform: rotate(180deg);
+}
+@media (min-width: 992px) {
+  body {
+    overflow: auto !important;
+  }
+  main {
+    margin-left: var(--offcanvas-width);
+  }
+  /* this is to remove the backdrop */
+  .offcanvas-backdrop::before {
+    display: none;
+  }
+  .sidebar-nav {
+    -webkit-transform: none;
+    transform: none;
+    visibility: visible !important;
+    height: calc(100% - var(--topNavbarHeight));
+    top: var(--topNavbarHeight);
+  }
+}
+
+body {
+  font-family: sans-serif;  /* Sets the default font */
+  margin: 0;                 /* Removes default margins */
+  padding: 0;                /* Removes default padding */
+  display: flex;             /* Makes the body content centered horizontally */
+  justify-content: center;   /* Aligns content horizontally in the center */
+  align-items: center;       /* Aligns content vertically in the center */
+  min-height: 100vh;          /* Sets minimum height to fill viewport */
+  background-color: #f0f0f0; 
+}
+.container {
+  background-color: #fff;      /* Sets container background color (white) */
+  padding: 30px;               /* Adds padding inside the container */
+  border-radius: 5px;          /* Adds rounded corners to the container */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+  width: 400px;               /* Sets the width of the container */  /* Adjust as needed */
+}
+
+h1 {
+  text-align: center;        /* Centers the text of the heading */
+  margin-bottom: 20px;         /* Adds space below the heading */
+}
+
+label {
+  display: block;             /* Makes labels display on separate lines */
+  margin-bottom: 5px;          /* Adds space below labels */
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;                
+  padding: 10px;              
+  border: 1px solid #ccc;   
+  border-radius: 30px;       
+  margin-bottom: 15px;        
+}
+
+button[type="submit"] {
+  background-color: blue;  
+  color: white;              
+  padding: 10px 20px;         
+  border: none;              
+  border-radius: 3px;         
+  cursor: pointer;
+  text-justify: center;
+}
